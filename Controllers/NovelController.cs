@@ -16,7 +16,7 @@ namespace CallViewer.Controllers
         {
             DataTable dt = new DataTable();
 
-            string str = @"Data Source=LT15784\SQLEXPRESS01;Initial Catalog=CallViewerDB;Integrated Security=True";
+            string str =  ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
 
                 using (SqlConnection cn = new SqlConnection(str))
