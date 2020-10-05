@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallViewer", "CallViewer.csproj", "{7B6A665D-3080-49AA-825E-5EA6809ACECA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B6A665D-3080-49AA-825E-5EA6809ACECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B6A665D-3080-49AA-825E-5EA6809ACECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B6A665D-3080-49AA-825E-5EA6809ACECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B6A665D-3080-49AA-825E-5EA6809ACECA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84C0D93F-8837-4DCF-B436-CAB52A13C735}
+	EndGlobalSection
+EndGlobal
