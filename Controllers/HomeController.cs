@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CallViewerData.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,18 @@ namespace CallViewer.Controllers
 {
     public class HomeController : Controller
     {
+
+        INovelData db;
+
+        public HomeController(INovelData db)
+        {
+            this.db = db;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var model = db.GetAll();
+            return View(model);
         }
 
         public ActionResult About()
