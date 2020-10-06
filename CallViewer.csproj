@@ -280,6 +280,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Novels\Index.cshtml" />
+    <Content Include="Views\Novels\Details.cshtml" />
+    <Content Include="Views\Novels\NotFound.cshtml" />
+    <Content Include="Views\Novels\Create.cshtml" />
+    <Content Include="Views\Novels\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

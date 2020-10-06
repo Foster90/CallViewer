@@ -9,6 +9,10 @@ namespace CallViewerData.Services
     public interface INovelData
     {
         IEnumerable<Novel> GetAll();
+        Novel Get(int id);
+        void Add(Novel novel);
+        void Update(Novel novel);
+
 
     }
 
