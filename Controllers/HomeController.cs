@@ -10,9 +10,9 @@ namespace CallViewer.Controllers
     public class HomeController : Controller
     {
 
-        INovelData db;
+        ICallData db;
 
-        public HomeController(INovelData db)
+        public HomeController(ICallData db)
         {
             this.db = db;
         }

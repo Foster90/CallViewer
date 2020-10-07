@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace CallViewer
 {
@@ -19,9 +20,10 @@ namespace CallViewer
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<InMemoryNovelData>()
-                    .As<INovelData>()
-                    .SingleInstance();
+            builder.RegisterType<SqlData>()
+                    .As<ICallData>()
+                    .InstancePerRequest();
+            builder.RegisterType<CallViewerDbContext>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
