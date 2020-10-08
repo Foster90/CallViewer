@@ -13,6 +13,9 @@ namespace CallViewerData.Services
         //public DbSet<Novel> Novel { get; set; }
         //public DbSet<Call> Call { get; set; }
         public DbSet<Incident> Incident { get; set; }
+        public DbSet<Request> Request { get; set; }
+
+       
 
 
     }

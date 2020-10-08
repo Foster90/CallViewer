@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CallViewerData.Services
 {
  
-        public class SqlData : IIncident //ICallData
+        public class SqlData : IIncident, IRequest
     {
             private readonly CallViewerDbContext db;
 
@@ -18,29 +18,29 @@ namespace CallViewerData.Services
                 this.db = db;
             }
 
-            //public void Add(Call call)
-            //{
-            //    db.Call.Add(call);
-            //    db.SaveChanges();
-            //}
+        public void RAdd(Request request)
+        {
+            db.Request.Add(request);
+            db.SaveChanges();
+        }
 
-            public void IAdd(Incident incident)
+        public void IAdd(Incident incident)
             {
             db.Incident.Add(incident);
             db.SaveChanges();
             }
 
-            //public void Delete(int id)
-            //{
+        public void RDelete(int id)
+        {
 
-            //    var call = db.Call.Find(id);
-            //    db.Call.Remove(call);
-            //    db.SaveChanges();
-               
+            var call = db.Request.Find(id);
+            db.Request.Remove(call);
+            db.SaveChanges();
 
-            //}
 
-            public void IDelete(int id)
+        }
+
+        public void IDelete(int id)
              {
 
             var incident = db.Incident.Find(id);
@@ -51,39 +51,39 @@ namespace CallViewerData.Services
             }
 
 
-            //public Call Get(int id)
-            //{
-            //    return db.Call.FirstOrDefault(n => n.CallID == id);
-            //}
+        public Request RGet(int id)
+        {
+            return db.Request.FirstOrDefault(n => n.RequestID == id);
+        }
 
-            public Incident IGet(int id)
+        public Incident IGet(int id)
             {
             return db.Incident.FirstOrDefault(n => n.IncidentID == id);
             }
 
 
 
-            //public IEnumerable<Call> GetAll()
-            //{
-            //    return db.Call;
-            //}
+        public IEnumerable<Request> RGetAll()
+        {
+            return db.Request;
+        }
 
-            public IEnumerable<Incident> IGetAll()
+        public IEnumerable<Incident> IGetAll()
             {
             return db.Incident;
             }
 
 
 
-            //public void Update(Call call)
-            //{
-            //    var entry = db.Entry(call);
-            //    entry.State = System.Data.Entity.EntityState.Modified;
-            //    db.SaveChanges();
+        public void RUpdate(Request request)
+        {
+            var entry = db.Entry(request);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
 
-            //}
+        }
 
-            public void IUpdate(Incident incident)
+        public void IUpdate(Incident incident)
             {
             var entry = db.Entry(incident);
             entry.State = System.Data.Entity.EntityState.Modified;
