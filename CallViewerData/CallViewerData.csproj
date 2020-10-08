@@ -52,10 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Call.cs" />
+    <Compile Include="Models\Incident.cs" />
     <Compile Include="Models\Novel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CallViewerDbContext.cs" />
     <Compile Include="Services\ICallData.cs" />
+    <Compile Include="Services\IIncident.cs" />
     <Compile Include="Services\InMemoryNovelData.cs" />
     <Compile Include="Services\INovelData.cs" />
     <Compile Include="Services\SqlData.cs" />

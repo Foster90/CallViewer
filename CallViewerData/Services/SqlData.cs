@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace CallViewerData.Services
 {
  
-        public class SqlData : ICallData
-        {
+        public class SqlData : IIncident //ICallData
+    {
             private readonly CallViewerDbContext db;
 
             public SqlData(CallViewerDbContext db)
@@ -18,39 +18,79 @@ namespace CallViewerData.Services
                 this.db = db;
             }
 
-            public void Add(Call call)
+            //public void Add(Call call)
+            //{
+            //    db.Call.Add(call);
+            //    db.SaveChanges();
+            //}
+
+            public void IAdd(Incident incident)
             {
-                db.Call.Add(call);
-                db.SaveChanges();
+            db.Incident.Add(incident);
+            db.SaveChanges();
             }
 
-            public void Delete(int id)
-            {
+            //public void Delete(int id)
+            //{
 
-                var call = db.Call.Find(id);
-                db.Call.Remove(call);
-                db.SaveChanges();
+            //    var call = db.Call.Find(id);
+            //    db.Call.Remove(call);
+            //    db.SaveChanges();
                
 
+            //}
+
+            public void IDelete(int id)
+             {
+
+            var incident = db.Incident.Find(id);
+            db.Incident.Remove(incident);
+            db.SaveChanges();
+
+
             }
 
-        public Call Get(int id)
+
+            //public Call Get(int id)
+            //{
+            //    return db.Call.FirstOrDefault(n => n.CallID == id);
+            //}
+
+            public Incident IGet(int id)
             {
-                return db.Call.FirstOrDefault(n => n.CallID == id);
+            return db.Incident.FirstOrDefault(n => n.IncidentID == id);
             }
 
-            public IEnumerable<Call> GetAll()
+
+
+            //public IEnumerable<Call> GetAll()
+            //{
+            //    return db.Call;
+            //}
+
+            public IEnumerable<Incident> IGetAll()
             {
-                return db.Call;
+            return db.Incident;
             }
 
-            public void Update(Call call)
+
+
+            //public void Update(Call call)
+            //{
+            //    var entry = db.Entry(call);
+            //    entry.State = System.Data.Entity.EntityState.Modified;
+            //    db.SaveChanges();
+
+            //}
+
+            public void IUpdate(Incident incident)
             {
-                var entry = db.Entry(call);
-                entry.State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-
+            var entry = db.Entry(incident);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
             }
-        }
+
+         
+    }
     
 }

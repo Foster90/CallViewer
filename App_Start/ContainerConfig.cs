@@ -21,7 +21,7 @@ namespace CallViewer
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<SqlData>()
-                    .As<ICallData>()
+                    .As<IIncident>()
                     .InstancePerRequest();
             builder.RegisterType<CallViewerDbContext>().InstancePerRequest();
 

@@ -11,7 +11,8 @@ namespace CallViewerData.Services
     public class CallViewerDbContext : DbContext
     {
         //public DbSet<Novel> Novel { get; set; }
-        public DbSet<Call> Call { get; set; }
+        //public DbSet<Call> Call { get; set; }
+        public DbSet<Incident> Incident { get; set; }
 
 
     }

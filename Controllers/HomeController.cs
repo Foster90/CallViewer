@@ -10,16 +10,16 @@ namespace CallViewer.Controllers
     public class HomeController : Controller
     {
 
-        ICallData db;
+        IIncident db;
 
-        public HomeController(ICallData db)
+        public HomeController(IIncident db)
         {
             this.db = db;
         }
 
         public ActionResult Index()
         {
-            var model = db.GetAll();
+            var model = db.IGetAll();
             return View(model);
         }
 

@@ -8,109 +8,109 @@ using System.Web.Mvc;
 
 namespace CallViewer.Controllers
 {
-    public class CallsController : Controller
-    {
-        private readonly ICallData db;
+    //public class CallsController : Controller
+    //{
+    //    private readonly ICallData db;
 
-        public CallsController(ICallData db)
-        {
-            this.db = db;
-        }
-
-
-        [HttpGet]
-        public ActionResult Index()
-        {
-
-            var model = db.GetAll();
-            return View(model);
-        }
-
-        [HttpGet]
-        public ActionResult Details(int id)
-        {
-            var model = db.Get(id);
-            if (model == null)
-            {
-
-                return View("NotFound");
-
-            }
-            return View(model);
-
-        }
-
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Call call)
-        {
-
-            if (ModelState.IsValid)
-            {
-                db.Add(call);
-                return RedirectToAction("Details", new { id = call.CallID });
-            }
-
-            return View();
-        }
+    //    public CallsController(ICallData db)
+    //    {
+    //        this.db = db;
+    //    }
 
 
-        public ActionResult Edit(int id)
-        {
+    //    [HttpGet]
+    //    public ActionResult Index()
+    //    {
 
-            var model = db.Get(id);
-            if (model == null)
-            {
-                return HttpNotFound();
+    //        var model = db.GetAll();
+    //        return View(model);
+    //    }
 
-            }
+    //    [HttpGet]
+    //    public ActionResult Details(int id)
+    //    {
+    //        var model = db.Get(id);
+    //        if (model == null)
+    //        {
 
-            return View(model);
-        }
+    //            return View("NotFound");
+
+    //        }
+    //        return View(model);
+
+    //    }
+
+    //    [HttpGet]
+    //    public ActionResult Create()
+    //    {
+    //        return View();
+    //    }
+
+    //    [HttpPost]
+    //    [ValidateAntiForgeryToken]
+    //    public ActionResult Create(Call call)
+    //    {
+
+    //        if (ModelState.IsValid)
+    //        {
+    //            db.Add(call);
+    //            return RedirectToAction("Details", new { id = call.CallID });
+    //        }
+
+    //        return View();
+    //    }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Call call)
-        {
+    //    public ActionResult Edit(int id)
+    //    {
 
-            if (ModelState.IsValid)
-            {
-                db.Update(call);
-                return RedirectToAction("Details", new { id = call.CallID });
-            }
+    //        var model = db.Get(id);
+    //        if (model == null)
+    //        {
+    //            return HttpNotFound();
 
-            return View(call);
-        }
+    //        }
 
-        [HttpGet]
-        public ActionResult Delete(int id)
-        {
-
-            var model = db.Get(id);
-            if (model == null)
-            {
-                return HttpNotFound();
-
-            }
-
-            return View(model);
-        }
+    //        return View(model);
+    //    }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, FormCollection form)
-        {
+    //    [HttpPost]
+    //    [ValidateAntiForgeryToken]
+    //    public ActionResult Edit(Call call)
+    //    {
 
-            db.Delete(id);
-            return RedirectToAction("Index");
-        }
-    }
+    //        if (ModelState.IsValid)
+    //        {
+    //            db.Update(call);
+    //            return RedirectToAction("Details", new { id = call.CallID });
+    //        }
+
+    //        return View(call);
+    //    }
+
+    //    [HttpGet]
+    //    public ActionResult Delete(int id)
+    //    {
+
+    //        var model = db.Get(id);
+    //        if (model == null)
+    //        {
+    //            return HttpNotFound();
+
+    //        }
+
+    //        return View(model);
+    //    }
+
+
+    //    [HttpPost]
+    //    [ValidateAntiForgeryToken]
+    //    public ActionResult Delete(int id, FormCollection form)
+    //    {
+
+    //        db.Delete(id);
+    //        return RedirectToAction("Index");
+    //    }
+    //}
 }
