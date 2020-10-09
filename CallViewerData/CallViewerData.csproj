@@ -51,10 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\Incident.cs" />
     <Compile Include="Models\Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CallViewerDbContext.cs" />
+    <Compile Include="Services\IDataModel.cs" />
     <Compile Include="Services\IIncident.cs" />
     <Compile Include="Services\IRequest.cs" />
     <Compile Include="Services\SqlData.cs" />

@@ -12,16 +12,16 @@ namespace CallViewer.Controllers
     public class HomeController : Controller
     {
 
-        IIncident db;
+        IDataModel db;
 
-        public HomeController(IIncident db)
+        public HomeController(IDataModel db)
         {
             this.db = db;
         }
 
         public ActionResult Index()
         {
-            var model = db.IGetAll();
+            var model = PrepareViewModel();
             return View(model);
         }
 
@@ -38,5 +38,16 @@ namespace CallViewer.Controllers
 
             return View();
         }
+
+
+        private DataModel PrepareViewModel()
+        {
+            return new DataModel
+            {
+                allIncidents = db.MGetAll(),
+                allRequests = db.DGetAll()
+            };
+        }
+
     }
 }

@@ -26,6 +26,9 @@ namespace CallViewer
             builder.RegisterType<SqlData>()
                    .As<IRequest>()
                    .InstancePerRequest();
+            builder.RegisterType<SqlData>()
+                  .As <IDataModel>()
+                  .InstancePerRequest();
             builder.RegisterType<CallViewerDbContext>().InstancePerRequest();
 
             var container = builder.Build();

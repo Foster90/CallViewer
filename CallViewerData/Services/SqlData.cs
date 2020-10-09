@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CallViewerData.Services
 {
  
-        public class SqlData : IIncident, IRequest
+        public class SqlData : IIncident, IRequest, IDataModel
     {
             private readonly CallViewerDbContext db;
 
@@ -90,7 +90,15 @@ namespace CallViewerData.Services
             db.SaveChanges();
             }
 
-         
+        public IEnumerable<Incident> MGetAll()
+        {
+            return db.Incident;
+        }
+
+        public IEnumerable<Request> DGetAll()
+        {
+            return db.Request;
+        }
     }
     
 }

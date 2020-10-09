@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CallViewerData.Models.Incident>
+﻿@model CallViewerData.Models.DataModel
 
 
 
@@ -8,7 +8,7 @@
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
-    <div>There are @Model.Count() number of Incidents</div>
-    <div>There are @Model.Count() number of Request</div>
+    <div>There are @Model.allIncidents.Count() number of Incidents</div>
+    <div>There are @Model.allRequests.Count() number of Request</div>
 </div>
 
