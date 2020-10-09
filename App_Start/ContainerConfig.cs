@@ -21,15 +21,22 @@ namespace CallViewer
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<SqlData>()
-                    .As<ICallData>()
+                    .As<IIncident>()                 
                     .InstancePerRequest();
+            builder.RegisterType<SqlData>()
+                   .As<IRequest>()
+                   .InstancePerRequest();
+            builder.RegisterType<SqlData>()
+                  .As <IDataModel>()
+                  .InstancePerRequest();
             builder.RegisterType<CallViewerDbContext>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             httpConfiguration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
-                    
+        
+
         }
     }
 }

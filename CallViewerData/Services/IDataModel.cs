@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace CallViewerData.Services
 {
-    public interface ICallData
+    public interface IDataModel
     {
 
-        IEnumerable<Call> GetAll();
-        Call Get(int id);
-        void Add(Call call);
-        void Update(Call call);
-        void Delete(int id);
+        IEnumerable<Incident> MGetAll();
+        IEnumerable<Request> DGetAll();
 
     }
 }

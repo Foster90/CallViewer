@@ -8,11 +8,11 @@ using System.Web.Mvc;
 
 namespace CallViewer.Controllers
 {
-    public class CallsController : Controller
+    public class IncidentsController : Controller
     {
-        private readonly ICallData db;
+        private readonly IIncident db;
 
-        public CallsController(ICallData db)
+        public IncidentsController(IIncident db)
         {
             this.db = db;
         }
@@ -22,14 +22,14 @@ namespace CallViewer.Controllers
         public ActionResult Index()
         {
 
-            var model = db.GetAll();
+            var model = db.IGetAll();
             return View(model);
         }
 
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var model = db.Get(id);
+            var model = db.IGet(id);
             if (model == null)
             {
 
@@ -48,13 +48,13 @@ namespace CallViewer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Call call)
+        public ActionResult Create(Incident incident)
         {
 
             if (ModelState.IsValid)
             {
-                db.Add(call);
-                return RedirectToAction("Details", new { id = call.CallID });
+                db.IAdd(incident);
+                return RedirectToAction("Details", new { id = incident.IncidentID });
             }
 
             return View();
@@ -64,7 +64,7 @@ namespace CallViewer.Controllers
         public ActionResult Edit(int id)
         {
 
-            var model = db.Get(id);
+            var model = db.IGet(id);
             if (model == null)
             {
                 return HttpNotFound();
@@ -77,23 +77,23 @@ namespace CallViewer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Call call)
+        public ActionResult Edit(Incident incident)
         {
 
             if (ModelState.IsValid)
             {
-                db.Update(call);
-                return RedirectToAction("Details", new { id = call.CallID });
+                db.IUpdate(incident);
+                return RedirectToAction("Details", new { id = incident.IncidentID });
             }
 
-            return View(call);
+            return View(incident);
         }
 
         [HttpGet]
         public ActionResult Delete(int id)
         {
 
-            var model = db.Get(id);
+            var model = db.IGet(id);
             if (model == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace CallViewer.Controllers
         public ActionResult Delete(int id, FormCollection form)
         {
 
-            db.Delete(id);
+            db.IDelete(id);
             return RedirectToAction("Index");
         }
     }

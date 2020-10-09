@@ -1,12 +1,14 @@
-﻿@model IEnumerable<CallViewerData.Models.Call>
-    
+﻿@model CallViewerData.Models.DataModel
+
+
 
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-   <div>There are @Model.Count() number of Novels</div>
+    <h1>Call Number count</h1>
+    <div>There are @Model.allIncidents.Count() number of Incidents</div>
+    <div>There are @Model.allRequests.Count() number of Request</div>
 </div>
 
