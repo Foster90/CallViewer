@@ -3,11 +3,14 @@ using CallViewerData.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
 
 namespace CallViewer.Controllers
 {
+
+
     public class IncidentsController : Controller
     {
         private readonly IIncident db;
@@ -112,5 +115,9 @@ namespace CallViewer.Controllers
             db.IDelete(id);
             return RedirectToAction("Index");
         }
+
+
+     
+
     }
 }

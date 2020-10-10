@@ -1,27 +1,54 @@
 ﻿@model IEnumerable<CallViewerData.Models.Incident>
-
+@using CallViewerData.Extensions
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create" )
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IncidentKey)
+            @Html.DisplayNameFor(model => model.IncidentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>       
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Unassigned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Impact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urgency)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IncidentID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>    
         <td>
-            @Html.DisplayFor(modelItem => item.IncidentKey)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IncidentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IncidentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IncidentID })
-        </td>
-    </tr>
-}
+        @Html.DisplayFor(modelItem => item.Unassigned)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Impact)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Urgency)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.IncidentID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.IncidentID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.IncidentID })
+    </td>
+</tr>
+    }
 
 </table>

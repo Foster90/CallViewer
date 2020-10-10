@@ -8,7 +8,7 @@
 
 <div class="jumbotron">
     <h1>Call Number count</h1>
-    <div>There are @Model.allIncidents.Count() number of Incidents</div>
+    <div>There are @Model.allIncidents.Count(r => r.ClockStopped == 0 ) number of Incidents</div>
     <div>There are @Model.allRequests.Count() number of Request</div>
 </div>
 

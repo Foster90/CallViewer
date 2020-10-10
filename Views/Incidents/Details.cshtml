@@ -1,0 +1,420 @@
+﻿@model CallViewerData.Models.Incident
+
+<div>
+    <h4>Incident</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IncidentKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IncidentKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LifeCycleKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LifeCycleKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationUserKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationUserKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateGroupKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateGroupKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdatedUserKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdatedUserKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateGroupKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateGroupKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaiseUserKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaiseUserKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDateKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDateKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdateDateKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdateDateKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriorityKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriorityKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category1Key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1Key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category2Key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category2Key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category3Key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category3Key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganisationKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganisationKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnvironmentKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnvironmentKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerReference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerReference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectReference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectReference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unassigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unassigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatestAssignmentUserKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatestAssignmentUserKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatestAssignmentKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatestAssignmentKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatestAssignmentGroupKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatestAssignmentGroupKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreachDateKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BreachDateKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponseLevelKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponseLevelKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CloseOnCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CloseOnCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigItemKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigItemKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClockStopped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClockStopped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousStoppedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousStoppedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Responsed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Responsed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResolveonCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResolveonCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MajorIncident)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MajorIncident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reopened)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reopened)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unresolved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unresolved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IncidentCauseKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IncidentCauseKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClinicalSafety)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClinicalSafety)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConvertedtoRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConvertedtoRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIDRemovalReques)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIDRemovalReques)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIDRemovalComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIDRemovalComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Impact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Impact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urgency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urgency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LineageKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LineageKey)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IncidentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
